@@ -137,7 +137,8 @@ jobs:
         shell: pwsh
         run: |
           $args = "${{ inputs.url }}", "--name", "${{ inputs.name }}"
-
+          $args += "--multi-window"
+          
           if ("${{ inputs.icon }}" -ne "") {
             $args += "--icon", "${{ inputs.icon }}"
           }
